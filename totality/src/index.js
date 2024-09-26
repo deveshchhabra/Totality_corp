@@ -22,7 +22,7 @@ import store from './utils/Store';
       <Header />
 
       <Outlet />
-      <Footer/>
+      {/* <Footer/> */}
 </Provider>
     </>
   );

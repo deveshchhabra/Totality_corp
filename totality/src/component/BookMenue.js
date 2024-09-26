@@ -1,10 +1,18 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Data } from '../constants'
-
+import { useDispatch } from 'react-redux'
+import { addItems } from '../utils/cartSlice'
 
 const BookMenue = () => {
-  const { id0, id1 } = useParams()
+    const [startDate, setStartDate] = useState('');
+  const [endMonth, setEndMonth] = useState('');
+
+    const dispatch=useDispatch();
+    const handleItem=()=>{
+        dispatch(addItems(rt1))
+    }
+      const { id0, id1 } = useParams()
   const res = Data.find(data => data[id0.toLocaleLowerCase()])[
     id0.toLocaleLowerCase()
   ]
@@ -33,12 +41,13 @@ const BookMenue = () => {
             {'₹' + rt1.price.toLocaleString()}
             {'/month'}
           </h4>
-          <label for='date'>Select Date:</label>
-          <input type='date' id='date' name='date' />
+          <label htmlFor='date'>Select Date:</label>
+          <input type='date'  onChange={(e)=>console.log(e.target.value)} name='date' />
           <br />
-          <label for='date'>end Date:</label>
-          <input type='date' id='date' name='date' />
-          <button >Book+</button>
+          <label htmlFor='date'>end Date:</label>
+          <input type='date' id='date' name='date' min="2024-06" max="2024-12" step="1" 
+ onChange={(e)=>console.log(e.target.value)}/>
+          <button onClick={handleItem} >Book+</button>
         </div>
       </div>
     </>
