@@ -1,7 +1,10 @@
 Techstack  
 <br/>
 ->react
+<br/>
 ->react router dom -> for routing 
--> redux -> state manage 
- ->data -> will be raw availble on constants files 
+<br/>
+-> redux -> state management
+<br/> 
+->data -> will be raw availble on constants files 
 
