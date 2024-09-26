@@ -7,4 +7,3 @@ Techstack
 -> redux -> state management
 <br/> 
 ->data -> will be raw availble on constants files 
-
